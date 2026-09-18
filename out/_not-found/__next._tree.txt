@@ -1,2 +1,2 @@
-:HL["/_next/static/chunks/14wqt31ykkm-c.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"s7ZOC9F0KEksqTIKFJlG7"}
+:HL["/VemariInstitucional-/_next/static/chunks/14wqt31ykkm-c.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"oEAThW1nThIMVzI7P3U-D"}

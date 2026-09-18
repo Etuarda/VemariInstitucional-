@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { routes } from '@/shared/lib/routes';
+import { getAssetPath } from '@/shared/lib/assets';
 import { WhatsAppLink } from './whatsapp-link';
 import type { Broker } from '../types/broker';
 import styles from './broker-accordion-slider.module.css';
@@ -40,7 +41,7 @@ export function BrokerAccordionSlider({ items, developmentName }: BrokerAccordio
             >
               {broker.photo ? (
                 <img
-                  src={broker.photo}
+                  src={getAssetPath(broker.photo)}
                   alt={`Retrato de ${broker.name}`}
                   className={styles.image}
                   loading={index < 2 ? 'eager' : 'lazy'}

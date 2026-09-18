@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev -p 8080",
     "build": "next build",
-    "postbuild": "node -e \"require('fs').writeFileSync('out/.nojekyll', '')\"",
+    "postbuild": "node -e \"const fs = require('fs'); fs.writeFileSync('out/.nojekyll', ''); fs.writeFileSync('.nojekyll', ''); try { fs.copyFileSync('out/index.html', 'index.html'); } catch (e) {}\"",
     "export": "npm run build",
     "start": "next start",
     "typecheck": "tsc --noEmit"

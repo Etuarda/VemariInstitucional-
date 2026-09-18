@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { MediaPlaceholder } from '@/shared/components/ui/media-placeholder';
 import { routes } from '@/shared/lib/routes';
+import { getAssetPath } from '@/shared/lib/assets';
 import type { Broker } from '../types/broker';
 import styles from './broker-card.module.css';
 
@@ -13,7 +14,7 @@ export function BrokerCard({ broker }: BrokerCardProps) {
     <article className={styles.card}>
       {broker.photo ? (
         <img
-          src={broker.photo}
+          src={getAssetPath(broker.photo)}
           alt={`Retrato de ${broker.name}`}
           className={styles.portrait}
           loading="lazy"

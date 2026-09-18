@@ -6,6 +6,7 @@ import { DevelopmentMarquee } from '@/features/developments/components/developme
 import { developments } from '@/features/developments/data/developments';
 import { MediaPlaceholder } from '@/shared/components/ui/media-placeholder';
 import { routes } from '@/shared/lib/routes';
+import { getAssetPath } from '@/shared/lib/assets';
 
 interface BrokerPageProps {
   readonly params: Promise<{ slug: string }>;
@@ -36,7 +37,7 @@ export default async function BrokerPage({ params }: BrokerPageProps) {
       <section className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-12">
         {broker.photo ? (
           <img
-            src={broker.photo}
+            src={getAssetPath(broker.photo)}
             alt={`Retrato de ${broker.name}`}
             className="aspect-[3/4] w-full object-cover lg:col-span-5"
             fetchPriority="high"
