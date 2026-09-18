@@ -6,6 +6,7 @@ import { DevelopmentMarquee } from '@/features/developments/components/developme
 import { developments } from '@/features/developments/data/developments';
 import { SectionHeading } from '@/shared/components/ui/section-heading';
 import { routes } from '@/shared/lib/routes';
+import { getAssetPath } from '@/shared/lib/assets';
 
 export default function HomePage() {
   return (
@@ -39,21 +40,30 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="relative min-h-[320px] sm:min-h-[400px] lg:min-h-[460px] overflow-hidden bg-vemari-blue lg:col-span-5">
-            <div className="absolute inset-x-8 top-8 h-32 border border-vemari-navy/15 bg-vemari-ivory" />
-            <div className="absolute bottom-0 right-0 h-3/5 w-3/4 bg-vemari-navy" />
-            <div className="absolute bottom-12 left-10 h-28 w-28 bg-vemari-gold" />
-            <Image
-              src="/brand/vemari-logo-blue.png"
-              alt="Vemari Empreendimentos"
-              width={420}
-              height={142}
-              className="absolute left-6 top-12 sm:left-10 sm:top-16 h-auto w-[75%] sm:w-[72%]"
-              priority
-            />
-            <p className="absolute bottom-8 right-6 sm:bottom-12 sm:right-10 max-w-44 sm:max-w-48 text-right font-serif text-xl sm:text-2xl leading-tight text-white">
-              Vem. Acredite. Realize o impossível.
-            </p>
+          <div className="relative min-h-[300px] sm:min-h-[380px] lg:min-h-[440px] overflow-hidden rounded-lg bg-vemari-navy lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between border border-vemari-navy/20 shadow-sm">
+            <div className="absolute -top-12 -right-12 h-44 w-44 rounded-full bg-vemari-blue/30 blur-2xl pointer-events-none" />
+            <div className="absolute -bottom-12 -left-12 h-44 w-44 rounded-full bg-vemari-gold/20 blur-2xl pointer-events-none" />
+            <div className="relative z-10">
+              <Image
+                src={getAssetPath('/brand/vemari-logo-white.png')}
+                alt="Vemari Empreendimentos"
+                width={360}
+                height={122}
+                className="h-auto w-48 sm:w-60"
+                priority
+              />
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-vemari-gold">
+                Territórios &amp; Planejamento Urbano
+              </p>
+            </div>
+            <div className="relative z-10 mt-8 border-t border-white/15 pt-5">
+              <p className="font-serif text-xl sm:text-2xl leading-snug text-white">
+                Vem. Acredite. Realize o impossível.
+              </p>
+              <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-white/60">
+                Piauí &amp; Maranhão
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { WhatsAppLink } from '@/features/brokers/components/whatsapp-link';
 import { DevelopmentCard } from '@/features/developments/components/development-card';
 import { developments } from '@/features/developments/data/developments';
+import { getAssetPath } from '@/shared/lib/assets';
 import styles from './vendas.module.css';
 
 export const metadata = {
@@ -26,7 +27,7 @@ export default function SalesPage() {
           <span className={styles.visualBadge}>Canal Direto da Incorporadora</span>
           <div className={styles.visualCenter}>
             <Image
-              src="/brand/vemari-logo-white.png"
+              src={getAssetPath('/brand/vemari-logo-white.png')}
               alt="Vemari Empreendimentos"
               width={300}
               height={100}

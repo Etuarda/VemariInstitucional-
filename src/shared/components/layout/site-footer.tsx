@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { routes } from '@/shared/lib/routes';
+import { getAssetPath } from '@/shared/lib/assets';
 import styles from './site-footer.module.css';
 
 const FOOTER_GROUPS = [
@@ -43,7 +44,7 @@ export function SiteFooter() {
       <div className={styles.contentGrid}>
         <div className={styles.brandCol}>
           <Image
-            src="/brand/vemari-logo-white.png"
+            src={getAssetPath('/brand/vemari-logo-white.png')}
             alt="Vemari Empreendimentos"
             width={210}
             height={71}

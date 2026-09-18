@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ContactForm } from '@/features/contact/components/contact-form';
+import { getAssetPath } from '@/shared/lib/assets';
 
 export const metadata = { title: 'Contato' };
 
@@ -17,7 +18,7 @@ export default function ContactPage() {
           </p>
         </div>
         <aside className="bg-vemari-blue p-6 sm:p-8">
-          <Image src="/brand/vemari-qr-code.png" alt="QR Code de contato da Vemari" width={220} height={275} className="mx-auto h-36 w-36 sm:h-44 sm:w-44 object-contain" />
+          <Image src={getAssetPath('/brand/vemari-qr-code.png')} alt="QR Code de contato da Vemari" width={220} height={275} className="mx-auto h-36 w-36 sm:h-44 sm:w-44 object-contain" />
           <p className="mt-4 sm:mt-5 text-center font-mono text-[11px] uppercase tracking-widest text-vemari-navy">Aponte a câmera e fale com a Vemari</p>
         </aside>
       </div>

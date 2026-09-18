@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState, useCallback } from 'react';
 import { routes } from '@/shared/lib/routes';
+import { getAssetPath } from '@/shared/lib/assets';
 import styles from './site-header.module.css';
 
 const NAVIGATION_ITEMS = [
@@ -46,7 +47,7 @@ export function SiteHeader() {
       <div className={styles.container}>
         <Link href={routes.home} aria-label="Vemari — página inicial" onClick={closeMenu}>
           <Image
-            src="/brand/vemari-logo-blue.png"
+            src={getAssetPath('/brand/vemari-logo-blue.png')}
             alt="Vemari Empreendimentos"
             width={180}
             height={61}
@@ -100,7 +101,7 @@ export function SiteHeader() {
           <div className={styles.mobileCardHeader}>
             <Link href={routes.home} aria-label="Vemari — página inicial" onClick={closeMenu}>
               <Image
-                src="/brand/vemari-logo-white.png"
+                src={getAssetPath('/brand/vemari-logo-white.png')}
                 alt="Vemari Empreendimentos"
                 width={150}
                 height={51}
@@ -111,7 +112,7 @@ export function SiteHeader() {
             <button
               type="button"
               className={styles.mobileCloseButton}
-              aria-label="Fechar menu"
+              aria-label="Sair do menu"
               onClick={closeMenu}
             >
               <svg
@@ -127,7 +128,7 @@ export function SiteHeader() {
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
-              <span>Fechar</span>
+              <span>Sair</span>
             </button>
           </div>
 

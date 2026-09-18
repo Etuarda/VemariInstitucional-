@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { routes } from '@/shared/lib/routes';
+import { getAssetPath } from '@/shared/lib/assets';
 import styles from './sales-card.module.css';
 
 export function SalesCard() {
@@ -11,7 +12,7 @@ export function SalesCard() {
           <span className={styles.badge}>Canal Direto</span>
           <div className={styles.logoWrapper}>
             <Image
-              src="/brand/vemari-logo-white.png"
+              src={getAssetPath('/brand/vemari-logo-white.png')}
               alt="Vemari Vendas Geral"
               width={260}
               height={88}
