@@ -1,0 +1,8 @@
+.placeholder {
+  @apply flex min-h-64 items-end border border-stone-300 bg-stone-100 p-5;
+}
+
+.label {
+  @apply font-mono text-[11px] uppercase tracking-widest text-stone-500;
+}
+

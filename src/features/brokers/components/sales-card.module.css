@@ -1,0 +1,52 @@
+.card {
+  @apply border-t border-stone-300 pt-6 flex flex-col justify-between;
+}
+
+.visualWrapper {
+  @apply relative aspect-[3/4] w-full overflow-hidden bg-vemari-navy flex flex-col items-center justify-between p-8 text-white select-none border border-vemari-navy transition-all duration-300;
+}
+
+.card:hover .visualWrapper {
+  @apply shadow-lg border-vemari-gold/50;
+}
+
+.badge {
+  @apply self-start font-mono text-[10px] uppercase tracking-[0.25em] text-vemari-gold border border-vemari-gold/40 px-3 py-1 bg-vemari-ink/60;
+}
+
+.logoWrapper {
+  @apply my-auto flex flex-col items-center text-center py-4;
+}
+
+.logo {
+  @apply h-auto w-44;
+}
+
+.tagline {
+  @apply mt-4 font-serif text-lg text-white/90 text-center max-w-[220px] leading-snug;
+}
+
+.visualFooter {
+  @apply w-full pt-4 border-t border-white/10 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-white/70;
+}
+
+.role {
+  @apply mt-5 font-mono text-[11px] uppercase tracking-widest text-vemari-gold font-semibold;
+}
+
+.name {
+  @apply mt-2 font-serif text-2xl text-stone-950;
+}
+
+.meta {
+  @apply mt-2 font-mono text-xs text-stone-500;
+}
+
+.bio {
+  @apply mt-4 text-sm leading-6 text-stone-600;
+}
+
+.link {
+  @apply mt-6 inline-block font-mono text-xs uppercase underline underline-offset-8 text-vemari-navy font-medium transition-colors hover:text-vemari-gold;
+}
+

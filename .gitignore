@@ -1,0 +1,14 @@
+# Dependências e artefatos gerados localmente não pertencem ao código-fonte.
+node_modules/
+.next/
+*.tsbuildinfo
+
+# Security 
+.env
+.env.local
+.env.*.local
+
+# Arquivos de sistema e logs não devem poluir revisões de código.
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,12 @@
+.fact {
+  @apply border-b border-stone-300 py-6 md:border-b-0 md:border-r md:px-6 first:md:pl-0 last:md:border-r-0;
+}
+
+.label {
+  @apply font-mono text-[10px] uppercase tracking-widest text-stone-500;
+}
+
+.value {
+  @apply mt-2 text-sm;
+}
+

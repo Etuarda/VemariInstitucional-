@@ -1,0 +1,35 @@
+.form {
+  @apply border-t border-stone-300 pt-8;
+}
+
+.fieldsGrid {
+  @apply grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2;
+}
+
+.fieldLabel {
+  @apply grid gap-2 text-sm text-stone-700;
+}
+
+.fieldLabelText {
+  @apply font-mono text-[11px] uppercase tracking-widest text-stone-500;
+}
+
+.input {
+  @apply min-h-12 w-full border border-stone-300 bg-white px-4;
+}
+
+.select {
+  @apply min-h-12 w-full border border-stone-300 bg-white px-3;
+}
+
+.errorAlert {
+  @apply mt-5 text-sm text-red-700;
+}
+
+.successAlert {
+  @apply mt-5 text-sm text-emerald-800;
+}
+
+.submitButton {
+  @apply mt-8 min-h-12 w-full sm:w-auto text-center bg-stone-950 px-7 font-mono text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-90;
+}

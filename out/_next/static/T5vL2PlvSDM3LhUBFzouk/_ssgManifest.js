@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fcorretores\u002F[slug]","\u002Fempreendimentos\u002F[slug]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

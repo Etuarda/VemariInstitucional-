@@ -1,0 +1,15 @@
+export const routes = {
+  home: '/',
+  about: '/sobre',
+  developments: '/empreendimentos',
+  brokers: '/corretores',
+  sales: '/vendas',
+  locations: '/onde-estamos',
+  contact: '/contato',
+  privacy: '/politica-de-privacidade',
+  cookies: '/politica-de-cookies',
+  terms: '/termos-de-uso',
+  barreirinhasLaunch: '/lancamentos/barreirinhas',
+  development: (slug: string) => `/empreendimentos/${slug}`,
+  broker: (slug: string) => `/corretores/${slug}`,
+} as const;

@@ -1,0 +1,16 @@
+.wrapper {
+  @apply max-w-3xl;
+}
+
+.eyebrow {
+  @apply font-mono text-xs uppercase tracking-[0.25em] text-stone-500;
+}
+
+.title {
+  @apply mt-3 font-serif text-3xl leading-tight text-stone-950 md:text-5xl;
+}
+
+.description {
+  @apply mt-5 max-w-2xl text-base leading-7 text-stone-600;
+}
+

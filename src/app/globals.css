@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vemari-bg: #f7f2e8;
+  --vemari-text: #172033;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--vemari-bg);
+  color: var(--vemari-text);
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #dcecf1;
+  color: #172033;
+}
+
+*:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}

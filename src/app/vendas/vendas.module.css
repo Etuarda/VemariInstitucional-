@@ -1,0 +1,115 @@
+.container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 md:py-20;
+}
+
+.heroGrid {
+  @apply grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-12;
+}
+
+.visualWrapper {
+  @apply aspect-[4/3] sm:aspect-[3/4] w-full bg-vemari-navy lg:col-span-5 flex flex-col justify-between p-6 sm:p-8 md:p-12 text-white relative overflow-hidden border border-vemari-navy shadow-xl;
+}
+
+.visualBadge {
+  @apply self-start font-mono text-[10px] uppercase tracking-[0.25em] text-vemari-gold border border-vemari-gold/40 px-3 py-1 bg-vemari-ink/60;
+}
+
+.visualCenter {
+  @apply my-auto flex flex-col items-center text-center py-4 sm:py-6;
+}
+
+.visualLogo {
+  @apply h-auto w-40 sm:w-52 md:w-64 filter brightness-0 invert opacity-95;
+}
+
+.visualTagline {
+  @apply mt-4 sm:mt-5 font-serif text-lg sm:text-xl md:text-2xl text-white/90 leading-snug;
+}
+
+.visualFooter {
+  @apply w-full pt-4 sm:pt-5 border-t border-white/15 flex items-center justify-between font-mono text-[11px] sm:text-xs uppercase tracking-widest text-white/70;
+}
+
+.heroContent {
+  @apply lg:col-span-7;
+}
+
+.heroEyebrow {
+  @apply font-mono text-xs uppercase tracking-[0.25em] text-vemari-gold;
+}
+
+.heroTitle {
+  @apply mt-4 font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-stone-950;
+}
+
+.heroMeta {
+  @apply mt-3 sm:mt-4 font-mono text-xs uppercase tracking-widest text-stone-500;
+}
+
+.heroDescription {
+  @apply mt-5 sm:mt-7 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-stone-600;
+}
+
+.heroButton {
+  @apply mt-6 sm:mt-8 inline-block w-full sm:w-auto text-center bg-stone-950 px-6 py-4 font-mono text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-90;
+}
+
+.sectionDivider {
+  @apply mt-16 sm:mt-20 md:mt-24 border-t border-stone-300 pt-8 sm:pt-12;
+}
+
+.sectionEyebrow {
+  @apply font-mono text-xs uppercase tracking-widest text-stone-500;
+}
+
+.sectionTitle {
+  @apply mt-3 font-serif text-2xl sm:text-3xl md:text-4xl text-stone-950;
+}
+
+.stepsGrid {
+  @apply mt-8 sm:mt-10 grid border-y border-stone-300 grid-cols-1 sm:grid-cols-2 md:grid-cols-4;
+}
+
+.stepItem {
+  @apply border-b border-stone-300 py-6 sm:py-7 md:border-b-0 md:border-r md:px-5 last:border-b-0 last:md:border-r-0;
+}
+
+.stepNumber {
+  @apply font-mono text-xs text-stone-400;
+}
+
+.stepLabel {
+  @apply mt-3 sm:mt-4 font-serif text-lg sm:text-xl text-stone-950;
+}
+
+.developmentsGrid {
+  @apply mt-8 sm:mt-10 grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-2;
+}
+
+.twoColumnGrid {
+  @apply mt-16 sm:mt-20 grid gap-8 sm:gap-10 border-t border-stone-300 pt-8 sm:pt-12 md:grid-cols-2;
+}
+
+.columnBody {
+  @apply mt-4 sm:mt-5 text-stone-600 leading-relaxed;
+}
+
+.ctaSection {
+  @apply mt-16 sm:mt-24 bg-stone-950 px-6 py-12 text-white md:px-12 md:py-16;
+}
+
+.ctaEyebrow {
+  @apply font-mono text-xs uppercase tracking-widest text-stone-400;
+}
+
+.ctaTitle {
+  @apply mt-4 max-w-3xl font-serif text-3xl sm:text-4xl md:text-5xl;
+}
+
+.ctaDescription {
+  @apply mt-4 sm:mt-5 text-stone-300 max-w-2xl;
+}
+
+.ctaButton {
+  @apply mt-6 sm:mt-8 inline-block w-full sm:w-auto text-center border border-white px-6 py-4 font-mono text-xs uppercase tracking-widest transition-colors hover:bg-white hover:text-stone-950;
+}

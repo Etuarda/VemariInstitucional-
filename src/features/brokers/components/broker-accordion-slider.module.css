@@ -1,0 +1,102 @@
+.container {
+  @apply relative w-full overflow-hidden;
+}
+
+.slider {
+  @apply flex flex-col w-full gap-2 h-auto md:flex-row md:gap-3 md:h-[580px];
+}
+
+/* Base mobile: transição por altura */
+.slide {
+  @apply relative overflow-hidden rounded-sm cursor-pointer select-none bg-stone-900 border border-stone-800;
+  height: 84px;
+  transition: height 500ms cubic-bezier(0.25, 1, 0.5, 1), flex 600ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slideActive {
+  height: 460px !important;
+}
+
+/* Progressive enhancement desktop: transição por flex horizontal */
+@media (min-width: 768px) {
+  .slide {
+    height: auto;
+    flex: 1 1 0%;
+  }
+
+  .slideActive {
+    height: auto !important;
+    flex: 3.8 1 0% !important;
+  }
+}
+
+.image {
+  @apply absolute inset-0 w-full h-full object-cover object-top filter brightness-90;
+  transition: transform 700ms cubic-bezier(0.25, 1, 0.5, 1), filter 500ms ease;
+}
+
+.slideActive .image {
+  @apply scale-105 filter brightness-100;
+}
+
+/* Gradiente escuro para garantir excelente legibilidade dos textos */
+.overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-950/10;
+  transition: opacity 500ms ease;
+}
+
+/* Rótulo visível quando o card está recolhido */
+.collapsedLabel {
+  @apply absolute inset-x-0 bottom-3 px-4 flex items-center justify-between pointer-events-none md:bottom-6 md:justify-center md:px-0;
+  transition: opacity 300ms ease;
+}
+
+.collapsedText {
+  @apply font-serif text-lg text-white font-medium whitespace-nowrap md:font-mono md:text-[11px] md:uppercase md:tracking-[0.2em] md:text-white/90;
+}
+
+@media (min-width: 768px) {
+  .collapsedText {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+}
+
+/* Conteúdo expandido (revelado de forma suave) */
+.expandedContent {
+  @apply absolute inset-x-0 bottom-0 p-6 md:p-8 flex flex-col justify-end z-10;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 400ms ease 150ms, transform 400ms cubic-bezier(0.25, 1, 0.5, 1) 150ms;
+}
+
+.slideActive .expandedContent {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.roleTag {
+  @apply font-mono text-[10px] uppercase tracking-[0.25em] text-vemari-gold;
+}
+
+.name {
+  @apply mt-2 font-serif text-3xl md:text-4xl text-white leading-tight;
+}
+
+.creci {
+  @apply mt-2 font-mono text-xs uppercase tracking-widest text-stone-300;
+}
+
+.region {
+  @apply mt-1 text-xs text-stone-400;
+}
+
+.actionButton {
+  @apply mt-4 sm:mt-6 inline-flex items-center justify-center w-full sm:w-auto bg-white text-stone-950 px-6 py-4 font-mono text-xs uppercase tracking-widest font-medium transition-colors hover:bg-vemari-gold hover:text-white shadow-lg;
+}
+
+.secondaryButton {
+  @apply mt-2 sm:mt-6 inline-flex items-center justify-center w-full sm:w-auto border border-white/40 text-white px-5 py-4 font-mono text-xs uppercase tracking-widest font-medium transition-colors hover:border-vemari-gold hover:text-vemari-gold;
+}
