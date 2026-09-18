@@ -1,10 +1,10 @@
 .filterBar {
   display: grid;
-  @apply grid-cols-1 gap-4 sm:gap-5 border-y border-stone-300 py-6 md:grid-cols-[1fr_1fr_auto] md:items-end;
+  @apply grid-cols-1 gap-4 sm:gap-5 border-y border-stone-300 py-6 sm:grid-cols-[280px_auto] sm:items-end sm:justify-between;
 }
 
 .counter {
-  @apply font-mono text-xs text-stone-500 pt-1 md:pt-0;
+  @apply font-mono text-xs text-stone-500 pt-1 sm:pt-0 sm:text-right;
 }
 
 .cardsGrid {

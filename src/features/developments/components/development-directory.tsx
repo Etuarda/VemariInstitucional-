@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { DEVELOPMENT_STATUS_FILTER_OPTIONS } from '../constants/development-status';
 import type { Development } from '../types/development';
 import { extractUniqueCities, filterDevelopments } from '../utils/filter-developments';
 import { DevelopmentCard } from './development-card';
@@ -13,31 +12,24 @@ interface DevelopmentDirectoryProps {
 
 export function DevelopmentDirectory({ items }: DevelopmentDirectoryProps) {
   const [city, setCity] = useState('all');
-  const [status, setStatus] = useState('all');
 
   const cities = useMemo(() => extractUniqueCities(items), [items]);
 
   const filtered = useMemo(
-    () => filterDevelopments(items, { city, status }),
-    [items, city, status],
+    () => filterDevelopments(items, { city }),
+    [items, city],
   );
 
   return (
     <div>
       <div className={styles.filterBar}>
         <FilterSelect
-          label="Cidade"
+          label="Filtrar por Cidade"
           value={city}
           onChange={setCity}
           options={cities.map((value) => [value, value] as const)}
         />
-        <FilterSelect
-          label="Status"
-          value={status}
-          onChange={setStatus}
-          options={DEVELOPMENT_STATUS_FILTER_OPTIONS}
-        />
-        <p className={styles.counter}>{filtered.length} resultado(s)</p>
+        <p className={styles.counter}>{filtered.length} empreendimento(s)</p>
       </div>
 
       {filtered.length ? (
@@ -49,7 +41,7 @@ export function DevelopmentDirectory({ items }: DevelopmentDirectoryProps) {
       ) : (
         <div className={styles.emptyState}>
           <h2 className={styles.emptyTitle}>Nenhum empreendimento encontrado.</h2>
-          <p className={styles.emptyText}>Ajuste os filtros para visualizar outras opções.</p>
+          <p className={styles.emptyText}>Ajuste a cidade selecionada para visualizar outras opções.</p>
         </div>
       )}
     </div>
@@ -72,7 +64,7 @@ function FilterSelect({ label, value, onChange, options }: FilterSelectProps) {
         onChange={(event) => onChange(event.target.value)}
         className={styles.select}
       >
-        <option value="all">Todos</option>
+        <option value="all">Todas as cidades</option>
         {options.map(([optionValue, optionLabel]) => (
           <option key={optionValue} value={optionValue}>
             {optionLabel}

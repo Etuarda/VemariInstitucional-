@@ -2,7 +2,7 @@ import type { Development } from '../types/development';
 
 interface DevelopmentFilterCriteria {
   readonly city: string;
-  readonly status: string;
+  readonly status?: string;
 }
 
 export function extractUniqueCities(items: readonly Development[]): readonly string[] {
@@ -15,8 +15,7 @@ export function filterDevelopments(
 ): readonly Development[] {
   return items.filter((item) => {
     const matchesCity = city === 'all' || item.city === city;
-    const matchesStatus = status === 'all' || item.status === status;
+    const matchesStatus = !status || status === 'all' || item.status === status;
     return matchesCity && matchesStatus;
   });
 }
-
