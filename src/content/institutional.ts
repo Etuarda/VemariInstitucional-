@@ -26,22 +26,74 @@ export const institutionalContent = {
   ],
 } as const;
 
-export const companyLocations = [
+export interface CompanyLocation {
+  readonly id: string;
+  readonly city: string;
+  readonly state: string;
+  readonly location: string;
+  readonly region: string;
+  readonly tagline: string;
+  readonly description: string;
+  readonly developmentSlugs: readonly string[];
+  readonly isOperationalBase?: boolean;
+}
+
+export const companyLocations: readonly CompanyLocation[] = [
   {
-    location: 'Pio IX — PI',
-    description: 'Região do Oriente, onde o Jardins Umbuzeiro marca o primeiro bairro planejado da cidade.',
-  },
-  {
+    id: 'valenca-do-piaui',
+    city: 'Valença do Piauí',
+    state: 'PI',
     location: 'Valença do Piauí — PI',
-    description: 'Berço da nossa história e polo de desenvolvimento urbano com expansão consolidada.',
+    region: 'Vale do Sambito',
+    tagline: 'Berço da nossa história e polo de expansão urbana.',
+    description:
+      'Valença do Piauí é a origem da trajetória da Vemari. Foi aqui que os primeiros ciclos ganharam vida com projetos que estruturaram novos bairros e oportunidades para centenas de famílias.',
+    developmentSlugs: ['boa-vida', 'nova-vida', 'nova-valenca'],
   },
   {
+    id: 'pio-ix',
+    city: 'Pio IX',
+    state: 'PI',
+    location: 'Pio IX — PI',
+    region: 'Região do Oriente',
+    tagline: 'O primeiro bairro planejado de Pio IX.',
+    description:
+      'Na Região do Oriente piauiense, Pio IX recebeu o Jardins Umbuzeiro, um marco no urbanismo da cidade com planejamento moderno, infraestrutura completa e sucesso absoluto de vendas.',
+    developmentSlugs: ['jardins-umbuzeiro'],
+  },
+  {
+    id: 'inhuma',
+    city: 'Inhuma',
+    state: 'PI',
+    location: 'Inhuma — PI',
+    region: 'Vale do Sambito',
+    tagline: 'Expansão pioneira no Centro-Sul Piauiense.',
+    description:
+      'Em 2021, a empresa deu seu primeiro grande passo além dos limites de Valença ao chegar a Inhuma com o loteamento Nova Esperança, consolidando o compromisso com o desenvolvimento regional.',
+    developmentSlugs: ['nova-esperanca'],
+  },
+  {
+    id: 'barreirinhas',
+    city: 'Barreirinhas',
+    state: 'MA',
     location: 'Barreirinhas — MA',
-    description: 'Novo território em preparação, com previsão de lançamento para 2026.',
+    region: 'Lençóis Maranhenses',
+    tagline: 'Expansão interestadual com alto potencial.',
+    description:
+      'Portal de entrada dos Lençóis Maranhenses e referência turística nacional, Barreirinhas recebe a expansão interestadual da Vemari com um futuro empreendimento planejado.',
+    developmentSlugs: ['barreirinhas-ma'],
   },
   {
+    id: 'mata-roma',
+    city: 'Mata Roma',
+    state: 'MA',
     location: 'Mata Roma — MA',
-    description: 'Presença empresarial da operação desde 2025. Empreendimento imobiliário: [VALIDAR].',
+    region: 'Leste Maranhense',
+    tagline: 'Presença empresarial e operacional.',
+    description:
+      'Base de atuação corporativa e operacional da Vemari no estado do Maranhão desde 2025, acompanhando o crescimento regional e preparando novos ciclos.',
+    developmentSlugs: [],
+    isOperationalBase: true,
   },
 ] as const;
 
