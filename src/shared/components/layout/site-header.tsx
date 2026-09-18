@@ -75,44 +75,62 @@ export function SiteHeader() {
           aria-label={isMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
           onClick={() => setIsMenuOpen((current) => !current)}
         >
-          {isMenuOpen ? (
-            /* Ícone de fechar (X) em alto contraste */
-            <svg
-              className={styles.menuIcon}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          ) : (
-            /* Ícone padrão de 3 barras (hambúrguer) em alto contraste */
-            <svg
-              className={styles.menuIcon}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          )}
-          <span>{isMenuOpen ? 'Fechar' : 'Menu'}</span>
+          {/* Ícone padrão de 3 barras (hambúrguer) */}
+          <svg
+            className={styles.menuIcon}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <span>Menu</span>
         </button>
       </div>
 
       {isMenuOpen ? (
         <div id="mobile-navigation" className={styles.mobileOverlay}>
+          {/* Topo do Card Mobile em tela cheia */}
+          <div className={styles.mobileCardHeader}>
+            <Link href={routes.home} aria-label="Vemari — página inicial" onClick={closeMenu}>
+              <Image
+                src="/brand/vemari-logo-white.png"
+                alt="Vemari Empreendimentos"
+                width={150}
+                height={51}
+                className={styles.mobileLogo}
+                priority
+              />
+            </Link>
+            <button
+              type="button"
+              className={styles.mobileCloseButton}
+              aria-label="Fechar menu"
+              onClick={closeMenu}
+            >
+              <svg
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <span>Fechar</span>
+            </button>
+          </div>
+
           <nav className={styles.mobileNav} aria-label="Navegação mobile">
             {NAVIGATION_ITEMS.map((item, index) => (
               <Link
@@ -124,7 +142,8 @@ export function SiteHeader() {
                 <span className={styles.mobileNavIndex}>
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                {item.label}
+                <span className={styles.mobileNavLabel}>{item.label}</span>
+                <span className={styles.mobileNavArrow}>→</span>
               </Link>
             ))}
           </nav>

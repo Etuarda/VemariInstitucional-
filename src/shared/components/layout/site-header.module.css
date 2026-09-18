@@ -31,25 +31,45 @@
   @apply h-5 w-5 flex-shrink-0 transition-transform duration-200;
 }
 
-/* Painel de Navegação Mobile: Alto Contraste (Fundo Escuro e Tipografia Branca Nítida) */
+/* Painel de Navegação Mobile: Card Completo em Tela Cheia (Alto Contraste) */
 .mobileOverlay {
-  @apply fixed inset-x-0 bottom-0 top-16 md:top-24 z-50 bg-[#121824] px-6 py-8 overflow-y-auto md:hidden flex flex-col justify-between text-white;
+  @apply fixed inset-0 z-[100] bg-[#121824] px-6 py-6 overflow-y-auto md:hidden flex flex-col justify-between text-white min-h-[100dvh];
+}
+
+.mobileCardHeader {
+  @apply flex items-center justify-between border-b border-white/15 pb-5 mb-4;
+}
+
+.mobileLogo {
+  @apply h-auto w-32 sm:w-36;
+}
+
+.mobileCloseButton {
+  @apply flex min-h-[44px] items-center gap-2 border border-white/30 bg-white/10 px-3.5 py-2 font-mono text-xs uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-[#121824] active:scale-95;
 }
 
 .mobileNav {
-  @apply flex flex-col;
+  @apply flex flex-col my-auto py-4 space-y-1;
 }
 
 .mobileNavLink {
-  @apply border-b border-white/15 py-4 font-serif text-2xl sm:text-3xl text-white transition-colors hover:text-vemari-gold active:text-vemari-gold flex items-center;
+  @apply border-b border-white/10 py-4 font-serif text-2xl sm:text-3xl text-white transition-colors hover:text-vemari-gold active:text-vemari-gold flex items-center justify-between;
 }
 
 .mobileNavIndex {
   @apply mr-4 font-mono text-xs font-bold text-vemari-gold;
 }
 
+.mobileNavLabel {
+  @apply flex-1;
+}
+
+.mobileNavArrow {
+  @apply font-mono text-base text-white/40 transition-transform group-hover:translate-x-1;
+}
+
 .mobileCtaWrapper {
-  @apply mt-8 pt-6 border-t border-white/20 flex flex-col gap-3;
+  @apply mt-6 pt-6 border-t border-white/20 flex flex-col gap-3;
 }
 
 .mobileContactButton {
@@ -61,5 +81,5 @@
 }
 
 .mobileFooterInfo {
-  @apply mt-4 text-center font-mono text-[11px] uppercase tracking-wider text-white/60;
+  @apply mt-2 text-center font-mono text-[11px] uppercase tracking-wider text-white/60;
 }
